@@ -1,4 +1,8 @@
-<center><h1>All The Boards</h1></center>
+<center><h1>All The Boards</h1>
+<div class= "item-links">
+  <%= link_to 'New Board', new_board_path %>
+</div>
+</center>
 
 <div id="board-columns">
 <% @boards.each do |board| %>
@@ -31,7 +35,8 @@
 </div>
 <% end %>
 </div>
-
+<center>
 <div class= "item-links">
   <%= link_to 'New Board', new_board_path %>
 </div>
+</center>
