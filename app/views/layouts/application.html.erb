@@ -23,13 +23,32 @@
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-    	<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-    	<!--<li><a href="#">Link</a></li> -->
-    	<li><%= link_to "Home", static_pages_home_path %></li>
-    	<li><%= link_to "About", static_pages_about_path %>	</li>
-    	<li><%= link_to "Users", users_path %></li>
-    	<li><%= link_to "Boards", boards_path %></li>
-    	<li><%= link_to "Pins", pins_path %></li>
+    	<!-- check for what controller is serving this up & set the active link-->
+
+    	<% if controller.controller_name == 'users' %>
+        <li class="active">
+      <% else %>
+        <li>
+      <% end %>
+        <%= link_to "Users", users_path %></li>
+    	<% if controller.controller_name =='boards' %>
+        <li class="active">
+      <% else %>
+        <li>
+      <% end %>
+        <%= link_to "Boards", boards_path %></li>
+    	<% if controller.controller_name == 'pins' %>
+        <li class="active">
+      <% else %>
+        <li>
+      <% end %>
+        <%= link_to "Pins", pins_path %></li>
+      <% if controller.controller_name == 'static_pages' %>
+        <li class="active">
+      <% else %>
+        <li>
+      <% end %>
+      <%= link_to "About", static_pages_about_path %>  </li>
     </ul>
   </div>
  </div>

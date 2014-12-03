@@ -12,6 +12,11 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+
+<% @user.boards.each do |board| %>
+   <p><%= board.name %></p>
+<% end %>
+
 <center>
 <%= render 'shared/footer' %> | <%= link_to 'Back', users_path %> |
 <%= link_to 'Edit', edit_user_path(@user) %> |

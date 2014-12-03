@@ -5,11 +5,15 @@ class PinsController < ApplicationController
   # GET /pins.json
   def index
     @pins = Pin.all
+    @boards = Board.all
+    @users  = User.all
   end
 
   # GET /pins/1
   # GET /pins/1.json
   def show
+    @boards = Board.all
+    @users = User.all 
   end
 
   # GET /pins/new
@@ -19,6 +23,7 @@ class PinsController < ApplicationController
 
   # GET /pins/1/edit
   def edit
+    @boards = Board.all
   end
 
   # POST /pins
@@ -69,6 +74,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:name, :image, :user_id)
+      params.require(:pin).permit(:name, :image, :user_id, :board_id)
     end
 end

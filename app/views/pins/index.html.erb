@@ -1,4 +1,4 @@
-<h1>Listing pins</h1>
+<h1>All The Pins</h1>
 
 <div id="columns">
     <% @pins.each do |pin| %>
@@ -8,8 +8,8 @@
         </div>
         <div class="item-info">
           <h3><%= pin.name %></h3>
-          <h4><%= pin.user.first_name %></h4>
-          <!-- need to add this <h4> pin.board.name</h4> -->
+          <h4>By: <%= pin.user.first_name %></h4>
+          <h4>Pinned to board: <%= pin.board.name %></h4>
         </div>
         <div class= "item-links">
           <%= link_to 'Show', pin %>

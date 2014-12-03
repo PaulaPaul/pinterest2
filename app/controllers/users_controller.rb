@@ -5,11 +5,14 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @boards = Board.all
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @boards = Board.all
+    @pins = Pin.all
   end
 
   # GET /users/new

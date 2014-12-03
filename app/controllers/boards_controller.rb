@@ -4,13 +4,16 @@ class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
   def index
+    @users = User.all
     @boards = Board.all
   end
 
   # GET /boards/1
   # GET /boards/1.json
   def show
- #   @boards = @user.boards
+    @users = User.all
+    @boards = Board.all
+    @pins = Pin.all
   end
 
   # GET /boards/new
@@ -20,6 +23,8 @@ class BoardsController < ApplicationController
 
   # GET /boards/1/edit
   def edit
+    @boards = Board.all
+    @users = User.all
   end
 
   # POST /boards
